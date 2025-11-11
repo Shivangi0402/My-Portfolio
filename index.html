@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <h1 class="logo"><span>Portfolio</span></h1>
+      <!-- Close Button for Mobile -->
+      <nav>
+        <ul>
+          <li class="active"><a href="#" data-page="home">Home</a></li>
+          <li><a href="#" data-page="about.html">About</a></li>
+          <li><a href="#" data-page="projects.html">Projects</a></li>
+          <li><a href="#" data-page="certificates.html">Certificates</a></li>
+          <li><a href="#" data-page="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Hamburger Menu Button (only visible on mobile) -->
+<button class="menu-toggle">☰</button>
+
+    <!-- Main Content -->
+    <div class="main-content" id="content">
+      <!-- Default Home Content -->
+      <div class="intro">
+        <h2>Hello, my name is <span class="highlight">Shivangi Sinha</span></h2>
+        <h1>I'm a <span class="red">CSE Student</span></h1>
+        <p>
+          A 3rd year B.TECH Computer Science and Engineering Student with
+          specialization in Artificial Intelligence and Data Science ...
+        </p>
+
+        <!-- Resume Button -->
+        <button id="show-resume">📄 Show Resume</button>
+      </div>
+      <div class="profile-img">
+        <img src="images/my-pic.jpg" alt="Web Designer Profile" />
+      </div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+      <button id="theme-toggle">🌙</button>
+      <div class="theme-colors">
+        <div class="theme-color blue" data-color="#007bff"></div>
+        <div class="theme-color pink" data-color="#e83e8c"></div>
+        <div class="theme-color orange" data-color="#fd7e14"></div>
+        <div class="theme-color green" data-color="#28a745"></div>
+        <div class="theme-color red" data-color="#ff3b3b"></div>
+      </div>
+    </div>
+
+    <!-- Content Loader Script -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

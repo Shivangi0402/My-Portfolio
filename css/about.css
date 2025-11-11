@@ -1,0 +1,363 @@
+:root {
+  --primary-color: #ff3b3b;
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ===== Theme Controls ===== */
+.theme-toggle-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.dark-mode-btn {
+  width: 50px;
+  height: 40px;
+  background-color: #ff3b3b;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 251, 0);
+  font-size: 16px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+  transform: scale(1.1);
+}
+
+.theme-colors {
+  display: flex;
+  margin-top: 10px;
+}
+
+.theme-colors button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 8px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.theme-colors button:hover {
+  transform: scale(1.1);
+}
+
+[data-theme="dark"] {
+  --background-color: #121212;
+  --text-color: #ffffff;
+}
+
+/* ===== Headings ===== */
+h1, h2 {
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 5px;
+}
+
+.sub-title {
+  font-size: 1.4rem;
+  margin: 25px 0 15px;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 10px;
+}
+
+/* ===== About Page Layout ===== */
+.about {
+  padding: 20px;
+  line-height: 1.6;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.description {
+  margin-bottom: 25px;
+  max-width: 850px;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.info-box {
+  width: 45%;
+}
+
+.info-box p {
+  margin: 8px 0;
+}
+
+/* ===== Skills Section ===== */
+.skills {
+  max-width: 650px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
+  gap: 10px;
+}
+
+.skill span {
+  min-width: 100px;
+  font-weight: bold;
+}
+
+.bar {
+  flex: 1;
+  background: var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 12px;
+  position: relative;
+}
+
+.fill {
+  background: var(--primary-color);
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out;
+}
+
+.percent {
+  min-width: 50px;
+  text-align: right;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* ===== Education & Trainings ===== */
+.education-experience {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.education, .trainings {
+  width: 45%;
+}
+
+.timeline {
+  margin-top: 15px;
+}
+
+.event {
+  margin-bottom: 20px;
+  padding-left: 10px;
+  border-left: 2px solid var(--primary-color);
+}
+
+.event h3 {
+  margin: 5px 0;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+}
+
+/* Link Styling */
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* LinkedIn */
+a[href*="linkedin"] {
+  color: #60a5fa;
+  font-weight: bold;
+}
+a[href*="linkedin"]:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* GitHub */
+a[href*="github"] {
+  color: #14b8a6;
+  font-weight: bold;
+}
+a[href*="github"]:hover {
+  color: #0d9488;
+  text-decoration: underline;
+}
+
+/* ============================= */
+/* Responsive Design (Tablet + Mobile) */
+/* ============================= */
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .main-content {
+    flex-direction: column;
+    margin-left: 250px;
+    text-align: center;
+  }
+}
+
+/* For tablets and mobiles */
+@media (max-width: 768px) {
+
+  /* Body stacked vertically */
+  body {
+    flex-direction: column;
+  }
+
+  /* Sidebar hidden by default */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* hidden */
+    width: 220px;
+    height: 100%;
+    background: var(--card-bg, #fff);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding-top: 60px; /* space for close button + logo */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Sidebar when open */
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* Logo in sidebar */
+  .sidebar .logo {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    align-self: flex-start;
+  }
+
+  /* Sidebar nav links stacked */
+  .sidebar nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .sidebar nav ul li a {
+    width: 100%;
+    text-align: left;
+    padding: 12px;
+  }
+
+  /* Close button inside sidebar */
+  .close-btn {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    color: var(--primary-color, #ff3b3b);
+    cursor: pointer;
+    z-index: 1102;
+  }
+
+  /* Hamburger menu button */
+  .menu-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: var(--primary-color, #ff3b3b);
+    cursor: pointer;
+    z-index: 1200; /* above sidebar */
+  }
+
+  /* Main content spacing to avoid hamburger overlap */
+  .main-content {
+    margin-left: 0;
+    padding: 120px 20px 20px; /* top padding = hamburger + margin */
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  /* Profile image smaller */
+  .profile-img img {
+    width: 180px;
+    margin-top: 20px;
+  }
+
+  /* Dark mode & theme color spacing */
+  .dark-mode-toggle {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .theme-colors {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+}
+
+/* Mobile-specific refinements */
+@media (max-width: 480px) {
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .intro h1 {
+    font-size: 1.6rem;
+  }
+
+  .intro h2 {
+    font-size: 1rem;
+    margin-top: 10px; /* extra space from hamburger */
+  }
+
+  .intro p {
+    font-size: 0.85rem;
+  }
+
+  #show-resume {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .profile-img img {
+    width: 130px;
+  }
+}
+
